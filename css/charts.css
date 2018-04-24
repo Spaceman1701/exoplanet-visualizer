@@ -1,14 +1,15 @@
 .vis {
-    outline: 5px;
-    outline-color: black;
-    outline-style: solid;
-    width: calc(33vw - 22px);
+    width: calc(30vw - 22px);
     height: 43vh;
     margin: 8px 8px 8px 8px;
     display: block;
     padding: 0px;
     float: left;
-}
+    box-shadow: 1px 2px 1px 4px rgba(1, 1, 1, 0.2);
+    border: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
 
 .control {
     outline: 3px;
