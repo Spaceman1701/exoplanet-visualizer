@@ -1,15 +1,14 @@
 .vis {
     width: calc(30% - 22px);
-    height: 43%;
+    height: 45%;
     margin: 8px 8px 8px 8px;
-    display: block;
-    padding: 0px;
-    float: left;
     box-shadow: 1px 2px 1px 4px rgba(1, 1, 1, 0.2);
     border: 1px;
     border-style: groove;
     border-radius: 5px;
     padding: 5px 5px 5px 5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #dashboard {
@@ -18,6 +17,7 @@
     padding: 0 0 0 0;
     width: 95vw;
     height: 92vh;
+    text-align: center;
 }
 
 .control {
