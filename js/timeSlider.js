@@ -12,6 +12,8 @@ function updateSlider() {
     countByYearUpdateYear(slider.value);
     sizesByYearUpdateYear(slider.value);
     radiusByYearUpdateYear(slider.value);
+
+    document.getElementById("date").textContent = slider.value;
 }
 
 
