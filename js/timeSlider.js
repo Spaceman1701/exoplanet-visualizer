@@ -1,5 +1,6 @@
 var slider = document.getElementById("timeSlider");
 var animTimeout;
+var animationSpeed = 15;
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
@@ -7,33 +8,34 @@ slider.oninput = function() {
 }
 
 function updateSlider() {
+    val = Math.floor(slider.value / 1000);
     console.log(slider.value);
-    totalByTypeUpdateYear(slider.value);
-    countByYearUpdateYear(slider.value);
-    sizesByYearUpdateYear(slider.value);
-    radiusByYearUpdateYear(slider.value);
-    updateFeaturedPlanet(slider.value);
+    totalByTypeUpdateYear(val);
+    countByYearUpdateYear(val);
+    sizesByYearUpdateYear(val);
+    radiusByYearUpdateYear(val);
+    updateFeaturedPlanet(val);
 
-    document.getElementById("date").textContent = slider.value;
+    document.getElementById("date").textContent = val;
 }
 
 
 function initTimeSlider(min, max) {
-    slider.min = min;
-    slider.max = max;
+    slider.min = min * 1000;
+    slider.max = max * 1000;
 }
 
 
 function autoUpdateDate() {
-    if (slider.value < maxYear) {
-        slider.value++;
+    if (slider.value < maxYear * 1000) {
+        slider.value = parseInt(slider.value) + 50;
         updateSlider();
-        setTimeout(autoUpdateDate, 750);
+        setTimeout(autoUpdateDate, animationSpeed);
     } else {
         window.clearTimeout(animTimeout);
     }
 }
 
 function startTimeAnimation() {
-    // animTimeout = setTimeout(autoUpdateDate, 750);
+    animTimeout = setTimeout(autoUpdateDate, animationSpeed);
 }

@@ -15,16 +15,11 @@ function initFeaturedPlanetSelector() {
     planetBuckets = getPlanetBuckets();
 }
 
-function updateFeaturedPlanet(year) {
-    console.log(planetBuckets);
-    console.log(typeof year);
+function updateFeaturedPlanet(year) {  
     planets = planetBuckets.get(parseInt(year));
     if (planets != null) {
         featured = planets[Math.floor(Math.random() * planets.length)];
-        console.log(featured);
         updateFeaturePlanetUi(featured);
-    } else {
-        console.log(planets);
     }
 }
 
