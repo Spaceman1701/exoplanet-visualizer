@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color: white;
+    background-color: #22252F;
+    color: #E3EAEE;
 }
 .vis {
     width: calc(30% - 22px);
@@ -52,4 +52,22 @@ body {
     font-family: monospace;
     font-size: 16px;
     line-height: 12px;
+}
+
+#infodiv {
+    text-align: right;
+    font-size: 10px;
+    
+}
+
+#infodiv a:visited {
+    color: lightgray;
+}
+
+#infodiv a:link {
+    color: lightgray;
+}
+
+a:active {
+    color: white;
 }

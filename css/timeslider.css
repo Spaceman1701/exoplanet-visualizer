@@ -18,6 +18,8 @@
 
     padding: 0px;
     margin: 0px;
+
+    border-radius: 5px;
 }
 
 /* Mouse-over effects */
@@ -31,14 +33,16 @@
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 30px;
-    background: #4CAF50; /* Green background */
+    background: #bc7e65; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    border-radius: 5px;
 }
 
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; 
-    background: #4CAF50; /* Green background */
+    background: #bc7e65; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border: 0;
+    border-radius: 5px;
 }
