@@ -48,15 +48,19 @@ function getCounts() {
   currentYear = minYear;
   for (i = 0; i < planetData.data.length; i++) {
     if (planetData.data[i].PDiscYear > currentYear) {
-      currentYear++;
-      counts.push(currentCount);
-      // currentCount = 0;
-      if (currentYear > maxYear) {
-        break;
+      for (j = currentYear; j < planetData.data[i].PDiscYear; j++) {
+        counts.push(currentCount);
       }
+      currentYear = planetData.data[i].PDiscYear;
+      // currentCount = 0;
+    }
+    if (currentYear == 2018) {
+      console.log("2018 planets being added - " + counts.length);
     }
     currentCount++;
   }
+  counts.push(currentCount);
+  console.log(counts[0]);
   return counts;
 }
 
@@ -84,5 +88,6 @@ function getPlanetTypesByYear() {
       currentData[3]++;
     }
   }
+  types.push(currentData);
   return types;
 }
