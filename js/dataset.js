@@ -6,7 +6,7 @@ planetData = null;
 minYear = -1;
 maxYear = -1;
 
-Papa.parse("/data/planets.csv", {
+Papa.parse(window.location.href + "/data/planets.csv", {
   download: true,
   header: true,
   dynamicTyping: true,
