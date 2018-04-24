@@ -10,6 +10,7 @@ function updateSlider() {
     console.log(slider.value);
     totalByTypeUpdateYear(slider.value);
     countByYearUpdateYear(slider.value);
+    sizesByYearUpdateYear(slider.value);
 }
 
 

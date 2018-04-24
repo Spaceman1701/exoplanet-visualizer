@@ -36,7 +36,7 @@ function initDataViz() {
   //getCounts();
   initCountByYear(minYear, maxYear);
   initTotalByType();
-
+  initSizeByYear();
 
   //start timeline animation
   startTimeAnimation();
@@ -90,4 +90,28 @@ function getPlanetTypesByYear() {
   }
   types.push(currentData);
   return types;
+}
+
+function getAverageSizeByYear() {
+  sizes = [];
+  currentAvg = 0;
+  currentCount = 0;
+  currentYear = minYear;
+
+  for (i = 0; i < planetData.data.length; i++) {
+    planet = planetData.data[i];
+    if (planet.PDiscYear > currentYear) {
+      avg = currentAvg / currentCount;
+      sizes.push(avg);
+      currentAvg = 0;
+      currentCount = 0;
+      currentYear++;
+    }
+
+    currentAvg += planet.PMass;
+    currentCount++;
+  }
+  sizes.push(currentAvg / currentCount);
+  console.log("sizes length " + sizes.length);
+  return sizes;
 }

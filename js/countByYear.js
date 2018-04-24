@@ -35,9 +35,7 @@ function initCountByYear(minYear, maxYear) {
 
 
 function createCountsData(toYear) {
-    result = countByYearData.slice(0, toYear - minYear + 1);
-    console.log(result);
-    return result;
+    return countByYearData.slice(0, toYear - minYear + 1);
 }
 
 function createCountsLabels(toYear) {
