@@ -38,6 +38,7 @@ function initDataViz() {
   initTotalByType();
   initSizeByYear();
   initRadiusByYear();
+  initFeaturedPlanetSelector();
 
   //start timeline animation
   startTimeAnimation();
@@ -145,4 +146,25 @@ function getAverageRadiusByYear() {
   sizes.push(currentAvg / currentCount);
   console.log("sizes length " + sizes.length);
   return sizes;
+}
+
+function getPlanetBuckets() {
+  currentList = [];
+  currentAvg = 0;
+  currentCount = 0;
+  currentYear = minYear;
+
+  buckets = new Map();
+
+  for (i = 0; i < planetData.data.length; i++) {
+    planet = planetData.data[i];
+    if (planet.PDiscYear > currentYear) {
+      buckets.set(currentYear, currentList);
+      currentYear = planet.PDiscYear;
+      currentList = []
+    }
+    currentList.push(planet);
+  }
+  buckets.set(currentYear, currentList);
+  return buckets;
 }

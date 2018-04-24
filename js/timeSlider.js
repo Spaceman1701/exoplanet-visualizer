@@ -12,6 +12,7 @@ function updateSlider() {
     countByYearUpdateYear(slider.value);
     sizesByYearUpdateYear(slider.value);
     radiusByYearUpdateYear(slider.value);
+    updateFeaturedPlanet(slider.value);
 
     document.getElementById("date").textContent = slider.value;
 }
