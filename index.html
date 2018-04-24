@@ -12,45 +12,46 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.4.0/papaparse.min.js"></script>
 
-    <div class="vis">
-            <canvas id="countByYear"></canvas>
-    </div>
-    <div class="vis">
-            <canvas id="sizeByYear"></canvas>
-    </div>
-    <div class="vis">
-        <!-- <canvas id="distByYear"></canvas> -->
-        <H2>Featured Planet</H2>
-        Name: HB-123
-        <br>
-        Mass: 2 Earth Masses
-        <br>
-        Type: Terrestrial
-        <br>
-        Orbit Distance: 1.1 AU
-        <br>
-        Habitable: Yes
-    </div>
-
-
-    <div class="vis">
-        <canvas id="radiusByYear"></canvas>
-    </div>
+    <div id="dashboard">
+        <div class="vis">
+                <canvas id="countByYear"></canvas>
+        </div>
+        <div class="vis">
+                <canvas id="sizeByYear"></canvas>
+        </div>
+        <div class="vis">
+            <!-- <canvas id="distByYear"></canvas> -->
+            <H2>Featured Planet</H2>
+            Name: HB-123
+            <br>
+            Mass: 2 Earth Masses
+            <br>
+            Type: Terrestrial
+            <br>
+            Orbit Distance: 1.1 AU
+            <br>
+            Habitable: Yes
+        </div>
     
-    <div class="vis">
-        <canvas id="totalByType"></canvas>
-    </div>
     
-    <div class="vis">
-        <H2>About</H2>
-        Year: 1988
+        <div class="vis">
+            <canvas id="radiusByYear"></canvas>
+        </div>
+        
+        <div class="vis">
+            <canvas id="totalByType"></canvas>
+        </div>
+        
+        <div class="vis">
+            <H2>About</H2>
+            Year: 1988
+        </div>
+    
+        <div class="control">
+            <input type="range" min="0" max="50" value="0" class="slider" id="timeSlider">
+        </div>
     </div>
-
-    <div class="control">
-        <input type="range" min="0" max="50" value="0" class="slider" id="timeSlider">
-        <div id="playpause"></div>
-    </div>
-
+   
 
     <!-- chart scripts -->
     <script src="js/countByYear.js"></script>

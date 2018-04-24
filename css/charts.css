@@ -1,6 +1,6 @@
 .vis {
-    width: calc(30vw - 22px);
-    height: 43vh;
+    width: calc(30% - 22px);
+    height: 43%;
     margin: 8px 8px 8px 8px;
     display: block;
     padding: 0px;
@@ -10,17 +10,25 @@
     border-style: groove;
     border-radius: 5px;
     padding: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+#dashboard {
+    position: relative;
+    margin: auto;
+    padding: 0 0 0 0;
+    width: 95vw;
+    height: 92vh;
+}
 
 .control {
-    outline: 3px;
-    outline-color: black;
-    outline-style: solid;
+
     height: 40px;
-    width: 90vw;
+    width: 50vw;
     padding-left: 0;
     padding-right: 0;
-    margin-top: 20px;
-    position: absolute;
-    bottom: 25px;
-    left: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0px;
 }
