@@ -1,4 +1,5 @@
 
+Chart.defaults.global.defaultFontColor = 'white';
 
 loadingCsv = true;
 planetData = null;

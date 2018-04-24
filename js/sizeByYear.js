@@ -13,7 +13,7 @@ function initSizeByYear() {
         data: {
             labels: createSizesLabels(maxYear),
             datasets: [{
-                backgroundColor: "#91558f",
+                borderColor: "#89a5d3",
                 label: "Average Planet Size (Earth Masses)",
                 data: createSizesByYearData(minYear),
                 fill: false,

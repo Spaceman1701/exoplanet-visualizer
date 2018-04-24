@@ -13,7 +13,7 @@ function initRadiusByYear() {
         data: {
             labels: createRadiusLabels(maxYear),
             datasets: [{
-                backgroundColor: "#91558f",
+                borderColor: "#d2b288",
                 label: "Average Planet Radius (Earth Radii)",
                 data: createRadiusByYearData(minYear),
                 fill: false,
