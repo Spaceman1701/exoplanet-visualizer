@@ -37,6 +37,7 @@ function initDataViz() {
   initCountByYear(minYear, maxYear);
   initTotalByType();
   initSizeByYear();
+  initRadiusByYear();
 
   //start timeline animation
   startTimeAnimation();
@@ -101,14 +102,44 @@ function getAverageSizeByYear() {
   for (i = 0; i < planetData.data.length; i++) {
     planet = planetData.data[i];
     if (planet.PDiscYear > currentYear) {
+      for (j = currentYear; j < planet.PDiscYear - 1; j++) {
+        sizes.push(null);
+      }
       avg = currentAvg / currentCount;
       sizes.push(avg);
       currentAvg = 0;
       currentCount = 0;
-      currentYear++;
+      currentYear = planet.PDiscYear;
     }
 
     currentAvg += planet.PMass;
+    currentCount++;
+  }
+  sizes.push(currentAvg / currentCount);
+  console.log("sizes length " + sizes.length);
+  return sizes;
+}
+
+function getAverageRadiusByYear() {
+  sizes = [];
+  currentAvg = 0;
+  currentCount = 0;
+  currentYear = minYear;
+
+  for (i = 0; i < planetData.data.length; i++) {
+    planet = planetData.data[i];
+    if (planet.PDiscYear > currentYear) {
+      for (j = currentYear; j < planet.PDiscYear - 1; j++) {
+        sizes.push(null);
+      }
+      avg = currentAvg / currentCount;
+      sizes.push(avg);
+      currentAvg = 0;
+      currentCount = 0;
+      currentYear = planet.PDiscYear;
+    }
+
+    currentAvg += planet.Pradius;
     currentCount++;
   }
   sizes.push(currentAvg / currentCount);

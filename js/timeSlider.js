@@ -11,6 +11,7 @@ function updateSlider() {
     totalByTypeUpdateYear(slider.value);
     countByYearUpdateYear(slider.value);
     sizesByYearUpdateYear(slider.value);
+    radiusByYearUpdateYear(slider.value);
 }
 
 
