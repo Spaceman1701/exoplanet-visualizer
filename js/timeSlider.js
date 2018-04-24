@@ -2,6 +2,8 @@ var slider = document.getElementById("timeSlider");
 var animTimeout;
 var animationSpeed = 15;
 
+var prevYear = 1988
+
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     updateSlider();
@@ -9,14 +11,17 @@ slider.oninput = function() {
 
 function updateSlider() {
     val = Math.floor(slider.value / 1000);
-    console.log(slider.value);
-    totalByTypeUpdateYear(val);
-    countByYearUpdateYear(val);
-    sizesByYearUpdateYear(val);
-    radiusByYearUpdateYear(val);
-    updateFeaturedPlanet(val);
-
-    document.getElementById("date").textContent = val;
+    if (val != prevYear) {
+        console.log(slider.value);
+        totalByTypeUpdateYear(val);
+        countByYearUpdateYear(val);
+        sizesByYearUpdateYear(val);
+        radiusByYearUpdateYear(val);
+        updateFeaturedPlanet(val);
+    
+        document.getElementById("date").textContent = val;
+        prevYear = val;
+    }
 }
 
 

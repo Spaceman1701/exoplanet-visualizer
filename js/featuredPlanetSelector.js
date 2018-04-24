@@ -13,6 +13,7 @@ var featuredGravity = document.getElementById("featuredgravity");
 
 function initFeaturedPlanetSelector() {
     planetBuckets = getPlanetBuckets();
+    updateFeaturedPlanet(minYear);
 }
 
 function updateFeaturedPlanet(year) {  
