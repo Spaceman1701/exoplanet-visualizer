@@ -10,7 +10,7 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/dataset.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.4.0/papaparse.min.js"></script>
 
     <div class="vis">
             <canvas id="countByYear"></canvas>
@@ -28,7 +28,7 @@
     </div>
     
     <div class="vis">
-        <canvas id="typeByYear"></canvas>
+        <canvas id="totalByType"></canvas>
     </div>
     
     <div class="vis">
@@ -41,8 +41,12 @@
     </div>
 
 
+    <!-- chart scripts -->
     <script src="js/countByYear.js"></script>
+    <script src="js/totalByType.js"></script>
+
     <script src="js/timeSlider.js"></script>
+    <script src="js/dataset.js"></script>
 </body>
 
 </html>

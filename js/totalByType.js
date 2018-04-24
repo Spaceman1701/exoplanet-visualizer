@@ -1,0 +1,31 @@
+var totalByTypeCtx = document.getElementById("totalByType").getContext('2d');
+var totalByTypeChart;
+
+var totalByTypeData;
+
+
+function initTotalByType() {
+    console.log("init doughnut chart");
+    totalByTypeData = getPlanetTypesByYear()
+    totalByTypeChart = new Chart(totalByTypeCtx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: totalByTypeData[0],
+                backgroundColor: ['#2a82e0', '#594015', '#539648', '#c95d1e'],
+
+            }],
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: ["Neptunian", "Terran", "Superterran", "Jovian"]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+}
+
+function totalByTypeUpdateYear(newYear) {
+    totalByTypeChart.data.datasets[0].data = totalByTypeData[newYear - minYear];
+    totalByTypeChart.update();
+}
