@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exoplanet Visualization</title>
+    <link rel="stylesheet" type="text/css" href="css/charts.css">
+    <link rel="stylesheet" type="text/css" href="css/timeslider.css">
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/dataset.js"></script>
+
+    <div class="vis">
+            <canvas id="countByYear"></canvas>
+    </div>
+    <div class="vis">
+            <canvas id="sizeByYear"></canvas>
+    </div>
+    <div class="vis">
+        <canvas id="distByYear"></canvas>
+    </div>
+
+
+    <div class="vis">
+        <canvas id="habitByYear"></canvas>
+    </div>
+    
+    <div class="vis">
+        <canvas id="typeByYear"></canvas>
+    </div>
+    
+    <div class="vis">
+        <canvas id="discByYear"></canvas>
+    </div>
+
+    <div class="control">
+        <input type="range" min="0" max="50" value="0" class="slider" id="timeSlider">
+        <div id="playpause"></div>
+    </div>
+
+
+    <script src="js/countByYear.js"></script>
+    <script src="js/timeSlider.js"></script>
+</body>
+
+</html>

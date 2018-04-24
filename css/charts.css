@@ -1,0 +1,25 @@
+.vis {
+    outline: 5px;
+    outline-color: black;
+    outline-style: solid;
+    width: calc(33vw - 21px);
+    height: 43vh;
+    margin: 8px 8px 8px 8px;
+    display: block;
+    padding: 0px;
+    float: left;
+}
+
+.control {
+    outline: 3px;
+    outline-color: black;
+    outline-style: solid;
+    height: 40px;
+    width: 90vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 25px;
+    left: 5vw;
+}
