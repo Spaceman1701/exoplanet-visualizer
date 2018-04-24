@@ -42,3 +42,10 @@
     margin-top: 15px;
     bottom: 0px;
 }
+
+#featuredcontainer {
+    text-align: left;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 12px;
+}
