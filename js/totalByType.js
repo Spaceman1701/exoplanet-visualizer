@@ -13,7 +13,7 @@ function initTotalByType() {
             datasets: [{
                 data: totalByTypeData[0],
                 backgroundColor: ['#2a82e0', '#594015', '#539648', '#c95d1e'],
-                borderColor: 'darkgrey'
+                borderColor: 'rgba(0, 0, 0, 0)'
             }],
             // These labels appear in the legend and in the tooltips when hovering different arcs
             labels: ["Neptunian", "Terran", "Superterran", "Jovian"]
