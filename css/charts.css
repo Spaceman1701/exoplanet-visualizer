@@ -21,7 +21,19 @@ body {
     padding: 0 0 0 0;
     width: 95vw;
     height: 92vh;
+    
     text-align: center;
+
+}
+
+@media screen and (max-width: 1024px) {
+    #dashboard {
+        width: 100vw;
+    }
+    .vis {
+        width: 30%;
+        margin: 8px 4px 8px 4px;
+    }
 }
 
 #date {
