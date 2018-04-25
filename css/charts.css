@@ -27,6 +27,14 @@ body {
 #date {
     font-size: 45px;
     font-family: monospace;
+    margin: 8px 8px 8px 8px;
+    box-shadow: 1px 2px 1px 4px rgba(1, 1, 1, 0.2);
+    border: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    width: 50%;
+    display: inline-block;
 }
 
 #datetitle {
@@ -86,6 +94,7 @@ a:active {
     margin-left: auto;
     padding-top: 20%;
     padding-right: 5%;
+    margin-top: -7%;
 }
 
 #imagecontainer img {
@@ -93,16 +102,35 @@ a:active {
     max-height: 50%;
 }
 
+#imgtight {
+    box-shadow: 1px 2px 1px 4px rgba(1, 1, 1, 0.2);
+    border: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
 #featureanother {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     padding: 1px;
     background-color: #11141E;
     display: inline-block;
-    width: 50%;
+    width: 25px;
     border-radius: 5px;
     border-style: outset;
     border-color: #11141E;
     user-select: none;
+    height: 25px;
+    padding: 5px 5px 5px 5px;
+}
+
+#featureanother img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 #featureanother:active {

@@ -42,5 +42,5 @@ function autoUpdateDate() {
 }
 
 function startTimeAnimation() {
-    animTimeout = setTimeout(autoUpdateDate, animationSpeed);
+    // animTimeout = setTimeout(autoUpdateDate, animationSpeed);
 }
