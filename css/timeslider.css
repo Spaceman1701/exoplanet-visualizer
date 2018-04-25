@@ -4,8 +4,8 @@
 
 /* The slider itself */
 .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
+    -webkit-appearance: none;
+    appearance: none; 
     width: 100%; /* Full-width */
     /* height: 25px;  */
     background: #d3d3d3; /* Grey background */
@@ -32,7 +32,7 @@
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
-    height: 30px;
+    height: 25px;
     background: #bc7e65; /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 5px;
