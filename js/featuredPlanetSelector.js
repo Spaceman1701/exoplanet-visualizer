@@ -51,7 +51,7 @@ function updateFeaturePlanetUi(planet) {
     featuredOrbit.textContent = "Orbit (AU): " + orbitDist;
     featuredRadius.textContent = "Radius (EU): " + radius;
     featuredMass.textContent = "Mass (EU): " + mass;
-    featuredGravity.textContent = "Gravity: " + gravity;
+    featuredGravity.textContent = "Gravity (EU): " + gravity;
     habitaleString = habitbale == 1 ? "Yes" : "No";
     featuredHabitable.textContent = "Habitable: " + habitaleString;
 
