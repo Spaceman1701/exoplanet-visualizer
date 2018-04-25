@@ -1,4 +1,10 @@
 
+if (!(location.hostname === "localhost" || location.hostname === "127.0.0.1") && location.protocol != 'https:')
+{
+ location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
+
+
 Chart.defaults.global.defaultFontColor = '#E3EAEE';
 Chart.defaults.global.defaultFontFamily = 'monospace';
 
