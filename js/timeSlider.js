@@ -1,6 +1,6 @@
 var slider = document.getElementById("timeSlider");
 var animTimeout;
-var animationSpeed = 15;
+var animationSpeed = 25;
 
 var currentYear = 1988;
 
@@ -42,5 +42,5 @@ function autoUpdateDate() {
 }
 
 function startTimeAnimation() {
-    // animTimeout = setTimeout(autoUpdateDate, animationSpeed);
+    animTimeout = setTimeout(autoUpdateDate, animationSpeed);
 }
