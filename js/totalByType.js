@@ -12,7 +12,7 @@ function initTotalByType() {
         data: {
             datasets: [{
                 data: totalByTypeData[0],
-                backgroundColor: ['#2a82e0', '#594015', '#539648', '#c95d1e'],
+                backgroundColor: ['#2a82e0', '#af9866', '#77c471', '#c95d1e'],
                 borderColor: 'rgba(0, 0, 0, 0)'
             }],
             // These labels appear in the legend and in the tooltips when hovering different arcs
@@ -20,7 +20,11 @@ function initTotalByType() {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            title: {
+                text: "Planet Types (Total)",
+                display: true,
+            }
         }
     });
 }

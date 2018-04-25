@@ -9,10 +9,10 @@ function initCountByYear(minYear, maxYear) {
         data: {
             labels: createCountsLabels(minYear),
             datasets: [{
-                label: '# planets',
+                label: 'Planets Discovered (Total)',
                 data: createCountsData(minYear),
-                backgroundColor: 'rgba(134,159,152, 1)',
-                borderColor: 'rgba(134,159,152, 1)',
+                backgroundColor: '#8ebbdb',
+                borderColor: '#8ebbdb',
                 hoverBackgroundColor: 'rgba(230, 236, 235, 0.75)',
                 hoverBorderColor: 'rgba(230, 236, 235, 0.75)',
                 borderWidth: 1
