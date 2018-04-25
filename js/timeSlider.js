@@ -4,9 +4,14 @@ var animationSpeed = 25;
 
 var currentYear = 1988;
 
-// Update the current slider value (each time you drag the slider handle)
+var totalCounts;
+
 slider.oninput = function() {
     updateSlider();
+}
+
+function initTotalCounts() {
+    totalCounts = getTotalCounts();
 }
 
 function updateSlider() {
@@ -20,6 +25,7 @@ function updateSlider() {
         updateFeaturedPlanet(val);
     
         document.getElementById("date").textContent = val;
+        document.getElementById("disctotal").textContent = totalCounts[val - minYear];
         currentYear = val;
     }
 }

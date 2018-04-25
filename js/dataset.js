@@ -41,6 +41,7 @@ function initDataViz() {
   initRadiusByYear();
   initFeaturedPlanetSelector();
 
+  initTotalCounts();
   //start timeline animation
   startTimeAnimation();
 }
@@ -51,11 +52,33 @@ function getCounts() {
   currentYear = minYear;
   for (i = 0; i < planetData.data.length; i++) {
     if (planetData.data[i].PDiscYear > currentYear) {
+      for (j = currentYear; j < planetData.data[i].PDiscYear - 1; j++) {
+        counts.push(0);
+      }
+      counts.push(currentCount);
+      currentYear = planetData.data[i].PDiscYear;
+      currentCount = 0;
+    }
+    if (currentYear == 2018) {
+      console.log("2018 planets being added - " + counts.length);
+    }
+    currentCount++;
+  }
+  counts.push(currentCount);
+  console.log(counts[0]);
+  return counts;
+}
+
+function getTotalCounts() {
+  counts = []
+  currentCount = 0;
+  currentYear = minYear;
+  for (i = 0; i < planetData.data.length; i++) {
+    if (planetData.data[i].PDiscYear > currentYear) {
       for (j = currentYear; j < planetData.data[i].PDiscYear; j++) {
         counts.push(currentCount);
       }
       currentYear = planetData.data[i].PDiscYear;
-      // currentCount = 0;
     }
     if (currentYear == 2018) {
       console.log("2018 planets being added - " + counts.length);

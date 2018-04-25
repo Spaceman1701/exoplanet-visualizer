@@ -39,7 +39,7 @@ body {
 #date {
     font-size: 45px;
     font-family: monospace;
-    margin: 8px 8px 8px 8px;
+    margin: 6px 6px 6px 6px;
     box-shadow: 1px 2px 1px 4px rgba(1, 1, 1, 0.2);
     border: 1px;
     border-style: groove;
@@ -52,6 +52,26 @@ body {
 #datetitle {
     font-size: 50px;
     font-family: monospace;
+    line-height: 15px;
+}
+
+#disctotaltitle {
+    font-size: 20px;
+    font-family: monospace;
+    line-height: 15px;
+}
+
+#disctotal {
+    font-size: 45px;
+    font-family: monospace;
+    margin: 6px 6px 6px 6px;
+    box-shadow: 1px 2px 1px 4px rgba(1, 1, 1, 0.2);
+    border: 1px;
+    border-style: groove;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    width: 50%;
+    display: inline-block;
 }
 
 .control {
