@@ -1,5 +1,6 @@
 
 Chart.defaults.global.defaultFontColor = '#E3EAEE';
+Chart.defaults.global.defaultFontFamily = 'monospace';
 
 loadingCsv = true;
 planetData = null;
