@@ -3,6 +3,7 @@ Chart.defaults.global.defaultFontColor = '#E3EAEE';
 
 loadingCsv = true;
 planetData = null;
+var bucketedData;
 
 minYear = -1;
 maxYear = -1;
@@ -31,6 +32,8 @@ function initDataViz() {
   console.log(minYear);
   console.log(maxYear);
 
+  bucketedData = createPlanetBuckets();
+
   initTimeSlider(minYear, maxYear);
 
   //init charts
@@ -50,23 +53,36 @@ function getCounts() {
   counts = []
   currentCount = 0;
   currentYear = minYear;
-  for (i = 0; i < planetData.data.length; i++) {
-    if (planetData.data[i].PDiscYear > currentYear) {
-      for (j = currentYear; j < planetData.data[i].PDiscYear - 1; j++) {
-        counts.push(0);
-      }
-      counts.push(currentCount);
-      currentYear = planetData.data[i].PDiscYear;
-      currentCount = 0;
+  buckets = bucketedData;
+  for (i = minYear; i <= maxYear; i++) {
+    if (buckets.get(i) != null) {
+      counts.push(buckets.get(i).length);
+    } else {
+      counts.push(0);
     }
-    if (currentYear == 2018) {
-      console.log("2018 planets being added - " + counts.length);
-    }
-    currentCount++;
   }
-  counts.push(currentCount);
-  console.log(counts[0]);
   return counts;
+  // return counts;
+  // counts = []
+  // currentCount = 0;
+  // currentYear = minYear;
+  // for (i = 0; i < planetData.data.length; i++) {
+  //   if (planetData.data[i].PDiscYear > currentYear) {
+  //     for (j = currentYear; j < planetData.data[i].PDiscYear - 1; j++) {
+  //       counts.push(0);
+  //     }
+  //     counts.push(currentCount);
+  //     currentYear = planetData.data[i].PDiscYear;
+  //     currentCount = 0;
+  //   }
+  //   if (currentYear == 2018) {
+  //     console.log("2018 planets being added - " + counts.length);
+  //   }
+  //   currentCount++;
+  // }
+  // counts.push(currentCount);
+  // console.log(counts[0]);
+  // return counts;
 }
 
 function getTotalCounts() {
@@ -79,9 +95,6 @@ function getTotalCounts() {
         counts.push(currentCount);
       }
       currentYear = planetData.data[i].PDiscYear;
-    }
-    if (currentYear == 2018) {
-      console.log("2018 planets being added - " + counts.length);
     }
     currentCount++;
   }
@@ -120,59 +133,103 @@ function getPlanetTypesByYear() {
 
 function getAverageSizeByYear() {
   sizes = [];
-  currentAvg = 0;
-  currentCount = 0;
-  currentYear = minYear;
+  // currentAvg = 0;
+  // currentCount = 0;
+  // currentYear = minYear;
 
-  for (i = 0; i < planetData.data.length; i++) {
-    planet = planetData.data[i];
-    if (planet.PDiscYear > currentYear) {
-      for (j = currentYear; j < planet.PDiscYear - 1; j++) {
-        sizes.push(null);
+  for (i = minYear; i <= maxYear; i++) {
+    currentYearData = bucketedData.get(i);
+    if (currentYearData != null) {
+
+      avg = 0;
+      realCount = 0;
+      for (j = 0; j < currentYearData.length; j++) {
+        if (currentYearData[j].PMass != null) {
+          avg += currentYearData[j].PMass;
+          realCount++;
+        }
       }
-      avg = currentAvg / currentCount;
-      sizes.push(avg);
-      currentAvg = 0;
-      currentCount = 0;
-      currentYear = planet.PDiscYear;
-    }
 
-    currentAvg += planet.PMass;
-    currentCount++;
+      sizes.push(avg / realCount);
+    } else {
+      sizes.push(null);
+    }
   }
-  sizes.push(currentAvg / currentCount);
-  console.log("sizes length " + sizes.length);
   return sizes;
+
+  // for (i = 0; i < planetData.data.length; i++) {
+  //   planet = planetData.data[i];
+  //   if (planet.PDiscYear > currentYear) {
+  //     for (j = currentYear; j < planet.PDiscYear - 1; j++) {
+  //       sizes.push(null);
+  //     }
+  //     avg = currentAvg / currentCount;
+  //     sizes.push(avg);
+  //     currentAvg = 0;
+  //     currentCount = 0;
+  //     currentYear = planet.PDiscYear;
+  //   }
+
+  //   currentAvg += planet.PMass;
+  //   currentCount++;
+  // }
+  // sizes.push(currentAvg / currentCount);
+  // console.log("sizes length " + sizes.length);
+  // return sizes;
 }
 
 function getAverageRadiusByYear() {
+  // sizes = [];
+  // currentAvg = 0;
+  // currentCount = 0;
+  // currentYear = minYear;
+
+  // for (i = 0; i < planetData.data.length; i++) {
+  //   planet = planetData.data[i];
+  //   if (planet.PDiscYear > currentYear) {
+  //     for (j = currentYear; j < planet.PDiscYear - 1; j++) {
+  //       sizes.push(null);
+  //     }
+  //     avg = currentAvg / currentCount;
+  //     sizes.push(avg);
+  //     currentAvg = 0;
+  //     currentCount = 0;
+  //     currentYear = planet.PDiscYear;
+  //   }
+
+  //   currentAvg += planet.Pradius;
+  //   currentCount++;
+  // }
+  // sizes.push(currentAvg / currentCount);
+  // console.log("sizes length " + sizes.length);
+  // return sizes;
   sizes = [];
-  currentAvg = 0;
-  currentCount = 0;
-  currentYear = minYear;
+  // currentAvg = 0;
+  // currentCount = 0;
+  // currentYear = minYear;
 
-  for (i = 0; i < planetData.data.length; i++) {
-    planet = planetData.data[i];
-    if (planet.PDiscYear > currentYear) {
-      for (j = currentYear; j < planet.PDiscYear - 1; j++) {
-        sizes.push(null);
+  for (i = minYear; i <= maxYear; i++) {
+    currentYearData = bucketedData.get(i);
+    if (currentYearData != null) {
+
+      avg = 0;
+      realCount = 0;
+      for (j = 0; j < currentYearData.length; j++) {
+        if (currentYearData[j].Pradius != null) {
+          avg += currentYearData[j].Pradius;
+          realCount++;
+        } 
       }
-      avg = currentAvg / currentCount;
-      sizes.push(avg);
-      currentAvg = 0;
-      currentCount = 0;
-      currentYear = planet.PDiscYear;
-    }
 
-    currentAvg += planet.Pradius;
-    currentCount++;
+      sizes.push(avg / realCount);
+    } else {
+      sizes.push(null);
+    }
   }
-  sizes.push(currentAvg / currentCount);
-  console.log("sizes length " + sizes.length);
   return sizes;
 }
 
-function getPlanetBuckets() {
+function createPlanetBuckets() {
   currentList = [];
   currentAvg = 0;
   currentCount = 0;
@@ -191,4 +248,8 @@ function getPlanetBuckets() {
   }
   buckets.set(currentYear, currentList);
   return buckets;
+}
+
+function getPlanetBuckets() {
+  return bucketedData;
 }
