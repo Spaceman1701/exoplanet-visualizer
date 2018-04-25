@@ -2,7 +2,7 @@ var slider = document.getElementById("timeSlider");
 var animTimeout;
 var animationSpeed = 15;
 
-var prevYear = 1988
+var currentYear = 1988;
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
@@ -11,7 +11,7 @@ slider.oninput = function() {
 
 function updateSlider() {
     val = Math.floor(slider.value / 1000);
-    if (val != prevYear) {
+    if (val != currentYear) {
         console.log(slider.value);
         totalByTypeUpdateYear(val);
         countByYearUpdateYear(val);
@@ -20,7 +20,7 @@ function updateSlider() {
         updateFeaturedPlanet(val);
     
         document.getElementById("date").textContent = val;
-        prevYear = val;
+        currentYear = val;
     }
 }
 
@@ -42,5 +42,5 @@ function autoUpdateDate() {
 }
 
 function startTimeAnimation() {
-    //animTimeout = setTimeout(autoUpdateDate, animationSpeed);
+    animTimeout = setTimeout(autoUpdateDate, animationSpeed);
 }

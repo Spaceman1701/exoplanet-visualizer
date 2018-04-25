@@ -19,12 +19,15 @@ var supertImgs = ["images/superterran1.png", "images/superterran2.png"];
 var terranImgs = ["images/terran1.png", "images/terran2.png"];
 
 
+featuringYear = 1988;
+
 function initFeaturedPlanetSelector() {
     planetBuckets = getPlanetBuckets();
     updateFeaturedPlanet(minYear);
 }
 
-function updateFeaturedPlanet(year) {  
+function updateFeaturedPlanet(year) {
+    featuringYear = year;
     planets = planetBuckets.get(parseInt(year));
     if (planets != null) {
         featured = planets[Math.floor(Math.random() * planets.length)];
@@ -53,13 +56,26 @@ function updateFeaturePlanetUi(planet) {
     featuredHabitable.textContent = "Habitable: " + habitaleString;
 
     //images
+    console.log("updating images");
     if (type == "Jovian") {
-        planetImg.src = jovianImgs[Math.floor(Math.random() * jovianImgs.length)];
+        planetImg.src = jovianImgs[getArrayIndex(name, jovianImgs.length)];
     } else if (type == "Neptunian") {
-        planetImg.src = neptuneImgs[Math.floor(Math.random() * neptuneImgs.length)];
+        planetImg.src = neptuneImgs[getArrayIndex(name, neptuneImgs.length)];
     } else if (type == "Superterran") {
-        planetImg.src = supertImgs[Math.floor(Math.random() * supertImgs.length)];
+        planetImg.src = supertImgs[getArrayIndex(name, supertImgs.length)];
     } else if (type == "Terran") {
-        planetImg.src = terranImgs[Math.floor(Math.random() * terranImgs.length)];
+        planetImg.src = terranImgs[getArrayIndex(name, terranImgs.length)];
     }
+}
+
+function getArrayIndex(planetName, arrayLength) { //so every planet has the same image every time
+    var hash = 0;
+	if (planetName.length == 0) return hash;
+	for (i = 0; i < planetName.length; i++) {
+		char = planetName.charCodeAt(i);
+		hash = ((hash<<5)-hash)+char;
+		hash = hash & hash; // Convert to 32bit integer
+    }
+    console.log(Math.abs(hash) % arrayLength);
+	return Math.abs(hash) % arrayLength;
 }
