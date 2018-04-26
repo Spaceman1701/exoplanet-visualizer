@@ -197,25 +197,25 @@ a:active {
         overflow: scroll;
     }
     .vis {
-        width: calc(100% - 10px);
-        margin: 5px;
+        width: calc(100% - 30px);
         padding: 0;
+        padding: 5px;
+        margin-left: -7px;
     }
     .control {
         position: fixed;
-        bottom: 35px;
-        width: 100vw;
-        left: 50%;
-        margin-left: -50vw;
+        bottom: 55px;
+        width: 95vw;
     }
     .slider {
         width: 100%; 
     }
     #productinfo {
         position: fixed;
-        bottom: 0px;
+        bottom: 20px;
         height: 20px;
         font-size: 12px;
+        left: 0px;
     }
     #productinfo img {
         height: 20px;
@@ -224,8 +224,8 @@ a:active {
     }
     #infodiv {
         position: fixed;
-        bottom: 0px;
-        right: 0px;
-        font-size: 7px;
+        bottom: 19px;
+        right: 15px;
+        font-size: 6px;
     }
 }
