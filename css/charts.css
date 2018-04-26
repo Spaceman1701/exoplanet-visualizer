@@ -177,7 +177,6 @@ a:active {
      float: left;
      position: absolute;
      bottom: 3%;
-     vertical-align: center;
      font-family: monospace;
      font-size: 20px;
      margin-left: 8px;
@@ -185,4 +184,6 @@ a:active {
 
 #productinfo img {
     height: 40px;
+    vertical-align: middle;
+    display: inline-block;
 }
