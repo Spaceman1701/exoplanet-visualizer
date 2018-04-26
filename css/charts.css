@@ -26,16 +26,6 @@ body {
 
 }
 
-@media screen and (max-width: 1024px) {
-    #dashboard {
-        width: 100vw;
-    }
-    .vis {
-        width: 30%;
-        margin: 8px 4px 8px 4px;
-    }
-}
-
 #date {
     font-size: 45px;
     font-family: monospace;
@@ -90,9 +80,9 @@ body {
 #featuredcontainer {
     text-align: left;
     font-family: monospace;
-    font-size: 15px;
-    line-height: 12px;
-    max-width: 55%;
+    font-size: 14px;
+    line-height: 11px;
+    max-width: 57%;
     height: 90%;
     margin-bottom: 0;
     float: left;
@@ -100,6 +90,7 @@ body {
 
 #featuedplantitle {
     font-size: 20px;
+    line-height: 15px;
 }
 
 #infodiv {
@@ -122,7 +113,7 @@ a:active {
 
 #imagecontainer {
     height: 65%;
-    max-width: 40%;
+    max-width: 38%;
     margin-left: auto;
     padding-top: 20%;
     padding-right: 5%;
@@ -186,4 +177,55 @@ a:active {
     height: 40px;
     vertical-align: middle;
     display: inline-block;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1024px) {
+    #dashboard {
+        width: 100vw;
+    }
+    .vis {
+        width: 30%;
+        margin: 8px 4px 8px 4px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    #dashboard {
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        overflow: scroll;
+    }
+    .vis {
+        width: calc(100% - 10px);
+        margin: 5px;
+        padding: 0;
+    }
+    .control {
+        position: fixed;
+        bottom: 35px;
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+    }
+    .slider {
+        width: 100%; 
+    }
+    #productinfo {
+        position: fixed;
+        bottom: 0px;
+        height: 20px;
+        font-size: 12px;
+    }
+    #productinfo img {
+        height: 20px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+    #infodiv {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        font-size: 7px;
+    }
 }
