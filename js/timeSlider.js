@@ -1,6 +1,7 @@
 var slider = document.getElementById("timeSlider");
 var animTimeout;
 var animationSpeed = 25;
+var shouldAnimate = true;
 
 var currentYear = 1988;
 
@@ -8,6 +9,7 @@ var totalCounts;
 
 slider.oninput = function() {
     updateSlider();
+    shouldAnimate = false;
 }
 
 function initTotalCounts() {
@@ -38,7 +40,7 @@ function initTimeSlider(min, max) {
 
 
 function autoUpdateDate() {
-    if (slider.value < maxYear * 1000) {
+    if (slider.value < maxYear * 1000 && shouldAnimate) {
         slider.value = parseInt(slider.value) + 50;
         updateSlider();
         setTimeout(autoUpdateDate, animationSpeed);
